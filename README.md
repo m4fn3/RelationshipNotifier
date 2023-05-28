@@ -1,4 +1,4 @@
-# PLUGIN_NAME
+# RelationshipNotifier
 
 ## Install
-https://raw.githubusercontent.com/m4fn3/PLUGIN_NAME/master/dist/PLUGIN_NAME.js
+https://raw.githubusercontent.com/m4fn3/RelationshipNotifier/master/dist/RelationshipNotifier.js
