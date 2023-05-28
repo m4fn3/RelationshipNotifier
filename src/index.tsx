@@ -94,7 +94,7 @@ const RelationshipNotifier: Plugin = {
             set(plugin_name, `groups-${me.id}`, JSON.stringify(groupData))
         }
 
-        async function syncFriends() {
+        function syncFriends() {
             l("- syncFriends()")
             const relationShips = RelationshipStoreReal.getRelationships()
             let friendsData = {
@@ -152,7 +152,7 @@ const RelationshipNotifier: Plugin = {
             checkAll()
             syncGuilds()
             syncGroups()
-            syncFriends().then()
+            syncFriends()
         })
         Patcher.after(GuildStore, "GUILD_DELETE", (self, args, res) => {
             l("- GUILD_DELETE()")
@@ -237,10 +237,10 @@ const RelationshipNotifier: Plugin = {
                 delete cachedFriends.requests[args[0].relationship?.id]
                 set(plugin_name, `friends-${me.id}`, JSON.stringify(cachedFriends))
             }
-            syncFriends().then()
+            syncFriends()
         })
         Patcher.after(RelationshipStore, "RELATIONSHIP_ADD", (self, args, res) => {
-            syncFriends().then()
+            syncFriends()
         })
     },
     onStop() {
