@@ -1,0 +1,12 @@
+{
+  "name": "RelationshipNotifier",
+  "version": "1.0.0",
+  "description": "Notifies you when a friend, group chat, or server removes you",
+  "authors": [
+    {
+      "name": "mafu",
+      "id": "519760564755365888"
+    }
+  ],
+  "color": "#e2c6ff"
+}
