@@ -157,6 +157,7 @@ const RelationshipNotifier: Plugin = {
         Patcher.after(GuildStore, "GUILD_DELETE", (self, args, res) => {
             l("- GUILD_DELETE()")
             // l(args)
+            if (args[0].guild?.unavailable) return
             const me = Users.getCurrentUser()
             const cachedGuilds = JSON.parse(get(plugin_name, `guilds-${me.id}`, "{}").toString())
             // l(cachedGuilds)
